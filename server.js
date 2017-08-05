@@ -39,7 +39,7 @@ app.get("/api/tables", (req, res)=>{
 })
 
 // WAITLIST JSON
-app.get("/api/tables", (req, res)=>{
+app.get("/api/waitlist", (req, res)=>{
   res.json(waitListData)
 })
 
