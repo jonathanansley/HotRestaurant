@@ -7,6 +7,11 @@ let app = express();
 let PORT = process.env.PORT || 3000;
 
 
+let tableData = require("./data/tables.js")
+
+
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
@@ -27,6 +32,11 @@ app.get("/tables", (req, res)=>{
 // Reservation
 app.get("/reserve", (req, res)=>{
   res.sendFile(path.join(__dirname), "reservation.html")
+})
+
+// TABLES JSON
+app.get("/api/tables", (req, res)=>{
+  res.json(tableData)
 })
 
 
