@@ -25,12 +25,12 @@ app.get("/", (req, res)=>{
 
 // Tables
 app.get("/tables", (req, res)=>{
-  res.sendFile(path.join(__dirname), "tables.html")
+  res.sendFile(path.join(__dirname, "/public/tables.html"))
 })
 
 // Reservation
 app.get("/reserve", (req, res)=>{
-  res.sendFile(path.join(__dirname), "reservation.html")
+  res.sendFile(path.join(__dirname, "/public/reservation.html"))
 })
 
 // TABLES JSON
