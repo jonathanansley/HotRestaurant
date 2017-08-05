@@ -97,7 +97,21 @@ $("#reservationSubmit").on("click", (e)=>{
     "customerID": id
   }
 
-  $.post("reserve/api/friends", reserveObj, (data)=>{
+
+  $.post("/api/tables", reserveObj, (data)=> {
+      if(data){
+        alert("Congratulations! You got a Table!")
+      } else {
+        alert("No free tables. You are added to the waitlist!")
+      }
+
+      $("#reserve_name").val("");
+      $("#reserve_phone").val("");
+      $("#reserve_email").val("");
+      $("#reserve_uniqueID").val("");
+
+    });
+
 
 });
 
