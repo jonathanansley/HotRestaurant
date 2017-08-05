@@ -8,8 +8,7 @@ let PORT = process.env.PORT || 3000;
 
 
 let tableData = require("./data/tables.js")
-
-
+let waitListData = require("./data/waitList.js")
 
 
 app.use(bodyParser.json());
@@ -38,6 +37,12 @@ app.get("/reserve", (req, res)=>{
 app.get("/api/tables", (req, res)=>{
   res.json(tableData)
 })
+
+// WAITLIST JSON
+app.get("/api/tables", (req, res)=>{
+  res.json(waitListData)
+})
+
 
 
 app.listen(PORT, ()=>{
