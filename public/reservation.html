@@ -36,7 +36,7 @@
           </div>
           <div class="panel-body">
 
-            <form role="form">
+            <form>
 
               <div class="form-group">
                 <label for="">Name</label>
@@ -58,7 +58,7 @@
                 <input type="text" class="form-control" id="reserve_uniqueID">
               </div>
 
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+              <button type="submit" class="btn btn-primary submit" id="reservationSubmit">Submit</button>
             </form>
 
           </div>
@@ -81,3 +81,22 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
+
+$("#reservationSubmit").on("click", (e)=>{
+  e.preventDefault();
+
+  let name = $("#reserve_name").val();
+  let email = $("#reserve_email").val();
+  let phone = $("#reserve_phone").val();
+  let id = $("#reserve_uniqueID").val();
+
+  let reserveObj = {
+    "customerName": name,
+    "phoneNumber": phone,
+    "customerEmail": email,
+    "customerID": id,
+  }
+
+  console.log(reserveObj);
+})
+</script>
