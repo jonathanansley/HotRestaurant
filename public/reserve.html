@@ -94,9 +94,11 @@ $("#reservationSubmit").on("click", (e)=>{
     "customerName": name,
     "phoneNumber": phone,
     "customerEmail": email,
-    "customerID": id,
+    "customerID": id
   }
 
-  console.log(reserveObj);
-})
+  $.post("reserve/api/friends", reserveObj, (data)=>{
+
+});
+
 </script>

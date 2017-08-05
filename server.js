@@ -20,7 +20,7 @@ app.use(express.static('public'))
 
 // Front Page
 app.get("/", (req, res)=>{
-  res.sendFile(path.join(__dirname), "index.html")
+  res.sendFile(path.join(__dirname, "/public/home.html"))
 })
 
 // Tables
@@ -30,10 +30,15 @@ app.get("/tables", (req, res)=>{
 
 // Reservation
 app.get("/reserve", (req, res)=>{
-  res.sendFile(path.join(__dirname, "/public/reservation.html"))
+  res.sendFile(path.join(__dirname, "/public/reserve.html"))
 })
 
 // TABLES JSON
+app.post("/api/tables", (req, res)=>{
+  console.log(req.body)
+  tableData.push(req.body)
+})
+
 app.get("/api/tables", (req, res)=>{
   res.json(tableData)
 })
