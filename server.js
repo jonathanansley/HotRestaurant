@@ -7,6 +7,10 @@ let app = express();
 let PORT = process.env.PORT || 3000;
 
 
+let tableData = require("./data/tables.js")
+let waitListData = require("./data/waitList.js")
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
@@ -28,6 +32,17 @@ app.get("/tables", (req, res)=>{
 app.get("/reserve", (req, res)=>{
   res.sendFile(path.join(__dirname), "reservation.html")
 })
+
+// TABLES JSON
+app.get("/api/tables", (req, res)=>{
+  res.json(tableData)
+})
+
+// WAITLIST JSON
+app.get("/api/waitlist", (req, res)=>{
+  res.json(waitListData)
+})
+
 
 
 app.listen(PORT, ()=>{
