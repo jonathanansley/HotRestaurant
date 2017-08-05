@@ -35,8 +35,14 @@ app.get("/reserve", (req, res)=>{
 
 // TABLES JSON
 app.post("/api/tables", (req, res)=>{
-  console.log(req.body)
-  tableData.push(req.body)
+  if (tableData.length < 5){
+    tableData.push(req.body)
+    res.json(true);
+  } else {
+    waitListData.push(req.body)
+    res.json(false);
+  }
+
 })
 
 app.get("/api/tables", (req, res)=>{
