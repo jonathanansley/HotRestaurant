@@ -35,6 +35,7 @@ app.get("/reserve", (req, res)=>{
 
 // TABLES JSON
 app.post("/api/tables", (req, res)=>{
+  console.log(req.body)
   tableData.push(req.body)
 })
 
