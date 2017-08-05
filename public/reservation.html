@@ -97,6 +97,8 @@ $("#reservationSubmit").on("click", (e)=>{
     "customerID": id,
   }
 
-  console.log(reserveObj);
-})
+  $.post("/api/friends", reserveObj, (data)=>{
+    
+});
+
 </script>
