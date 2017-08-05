@@ -104,6 +104,12 @@ $("#reservationSubmit").on("click", (e)=>{
       } else {
         alert("No free tables. You are added to the waitlist!")
       }
+
+      $("#reserve_name").val("");
+      $("#reserve_phone").val("");
+      $("#reserve_email").val("");
+      $("#reserve_uniqueID").val("");
+
     });
 
 
